@@ -1,0 +1,12 @@
+.board-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    height: 100%;
+    width: 100%;
+}
+
+.status-alert{
+    color: #FF0000;
+    font-weight: bold;
+}

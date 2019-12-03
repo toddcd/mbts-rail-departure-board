@@ -1,0 +1,6 @@
+.grid-wrapper {
+    align-self: center;
+    width: 100%;
+    height: 800px;
+    min-height: 400px;
+}

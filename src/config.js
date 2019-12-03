@@ -1,7 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000/api',
-  //CALC_ENGINE_ENDPOINT: 'http://localhost:8000/api/riskbudget',
-  CALC_ENGINE_ENDPOINT: 'https://mighty-reef-59398.herokuapp.com/api/riskbudget',
-  //API_ENDPOINT: 'https://damp-beach-84980.herokuapp.com/api',
-  TOKEN_KEY: 'risk-budget-client-auth-token',
+  MBTA_API_ENDPOINT: 'https://api-v3.mbta.com',
+  MBTA_API_KEY: '4e6f8491b78b4e97b8ffe7a3d80306ca'
 }
