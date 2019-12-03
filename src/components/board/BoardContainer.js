@@ -117,7 +117,22 @@ class BoardContainer extends Component {
                         rowData: this.state.data.baseRowData
                     }
                 })
+            }else if(station === 'checkedNorth' && !this.state.checkedSouth){
+                const filteredData = this.state.data.baseRowData.filter(route => {
+                    return route.station !== 'North Station'
+                })
+
+                this.setState({
+                    ...this.state,
+                    [station]: checked,
+                    stations: ['North Station'],
+                    data: {
+                        ...this.state.data,
+                        rowData: filteredData
+                    }
+                })
             }
+
             if (station === 'checkedSouth' && this.state.checkedNorth) {
                 this.setState({
                     ...this.state,
@@ -128,7 +143,22 @@ class BoardContainer extends Component {
                         rowData: this.state.data.baseRowData
                     }
                 })
+            }else if(station === 'checkedSouth' && !this.state.checkedNorth){
+                const filteredData = this.state.data.baseRowData.filter(route => {
+                    return route.station !== 'South Station'
+                })
+
+                this.setState({
+                    ...this.state,
+                    [station]: checked,
+                    stations: ['South Station'],
+                    data: {
+                        ...this.state.data,
+                        rowData: filteredData
+                    }
+                })
             }
+
         } else if (!checked) {
             if (station === 'checkedNorth' && this.state.checkedSouth) {
                 const filteredData = this.state.data.rowData.filter(route => {
