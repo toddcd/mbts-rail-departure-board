@@ -46,7 +46,7 @@ function TimeDateHeader(props) {
                                     onChange={props.handleChange}
                                     value="checkedNorth"
                                     color="primary"
-                                    inputProps={{'aria-label': 'primary checkbox'}}
+                                    inputProps={{'aria-label': 'secondary checkbox'}}
                                 /> <label className='north-label'>North Station</label>
                             </div>
                             <div>

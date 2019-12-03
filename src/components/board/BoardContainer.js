@@ -17,7 +17,13 @@ class BoardContainer extends Component {
             direction: 'Departure',
             data: {
                 columnDefs: [
-                    {headerName: "Station", field: "station", cellRenderer: this.stationCellRenderer, filter: false, minWidth: 60},
+                    {
+                        headerName: "Station",
+                        field: "station",
+                        cellRenderer: this.stationCellRenderer,
+                        filter: false,
+                        minWidth: 60
+                    },
                     {headerName: "Carrier", field: "carrier"},
                     {headerName: "Time", field: "time", minWidth: 62},
                     {headerName: "Destination", field: "destination", minWidth: 75},
@@ -117,9 +123,9 @@ class BoardContainer extends Component {
                         rowData: this.state.data.baseRowData
                     }
                 })
-            }else if(station === 'checkedNorth' && !this.state.checkedSouth){
+            } else if (station === 'checkedNorth' && !this.state.checkedSouth) {
                 const filteredData = this.state.data.baseRowData.filter(route => {
-                    return route.station !== 'North Station'
+                    return route.station === 'North Station'
                 })
 
                 this.setState({
@@ -143,9 +149,9 @@ class BoardContainer extends Component {
                         rowData: this.state.data.baseRowData
                     }
                 })
-            }else if(station === 'checkedSouth' && !this.state.checkedNorth){
+            } else if (station === 'checkedSouth' && !this.state.checkedNorth) {
                 const filteredData = this.state.data.baseRowData.filter(route => {
-                    return route.station !== 'South Station'
+                    return route.station === 'South Station'
                 })
 
                 this.setState({
@@ -160,6 +166,20 @@ class BoardContainer extends Component {
             }
 
         } else if (!checked) {
+
+            if ((station === 'checkedNorth' && !this.state.checkedSouth)
+                || (station === 'checkedSouth' && !this.state.checkedNorth)) {
+                this.setState({
+                    ...this.state,
+                    [station]: checked,
+                    stations: ['No Station Selected'],
+                    data: {
+                        ...this.state.data,
+                        rowData: []
+                    }
+                })
+            }
+
             if (station === 'checkedNorth' && this.state.checkedSouth) {
                 const filteredData = this.state.data.rowData.filter(route => {
                     return route.station !== 'North Station'
@@ -175,7 +195,7 @@ class BoardContainer extends Component {
                     }
                 })
             }
-            if (station === 'checkedSouth' && this.state.checkedSouth) {
+            if (station === 'checkedSouth' && this.state.checkedNorth) {
                 const filteredData = this.state.data.rowData.filter(route => {
                     return route.station !== 'South Station'
                 })
