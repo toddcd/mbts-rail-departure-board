@@ -1,0 +1,20 @@
+.td-header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+
+}
+
+.td-time{
+    flex-basis: 25%;
+}
+
+.td-station{
+    flex-basis: 75%;
+}
+
+.td-date{
+    flex-basis: 25%;
+}
