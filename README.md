@@ -24,3 +24,10 @@ Results can be filtered by specific columns by setting a filter on the header.
 The potential issues with a routes status (i.e. - late, delayed, canceled, etc...) are highlighted in red.
 
 ![Alt text](./readme_images/status.png "Screen Shots")&nbsp;&nbsp;&nbsp;&nbsp;
+
+Key Technologies:
+MBTA V3 API,
+React,
+CSS,
+Materials-UI,
+AG-Grid
